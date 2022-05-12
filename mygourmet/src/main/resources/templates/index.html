@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <title>Home - MyGourmet</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/">
+      <img th:src="@{/images/logo.png}" alt="Logo">
+    </a>
+    <div class="navigation">
+      <a href="#about" th:text="#{home.navbar.about}">About</a>
+      <a href="#order" th:text="#{home.navbar.order}">Order</a>
+    </div>
+  </nav>
+  <div class="section" id="about">
+    <h1 th:text="#{home.about}">About Us</h1>
+    <p th:text="#{home.about.text}">We are MyGourmet, a small online shop for gourmet food and whine. In our kitchen we
+      prepare healthy and delicious
+      food.</p>
+    <video th:src="@{/videos/cooking.mp4}" autoplay muted loop></video>
+    <div class="spacer"></div>
+  </div>
+  <div class="section" id="order">
+    <a href="/order" th:text="#{home.order.button}">Order here</a>
+  </div>
+  <footer>
+    <div class="wrapper">
+      <div class="logowrap">
+        <a href="/">
+          <img th:src="@{/images/logo.png}" alt="Logo">
+        </a>
+        <div class="payments">
+          <img th:src="@{/images/paypal.png}" alt="paypal">
+          <img th:src="@{/images/visa.png}" alt="visa">
+          <img th:src="@{/images/mastercard.png}" alt="mastercard">
+        </div>
+      </div>
+      <div>
+        <section>
+          <h3 th:text="#{footer.help}">Hilfe</h3>
+          <a href="/contact" th:text="#{footer.help.contact}">Kontakt</a>
+          <a href="/adress" th:text="#{footer.help.address}">Adresse</a>
+          <a href="/phone" th:text="#{footer.help.phone}">Telefon</a>
+        </section>
+        <section>
+          <h3 th:text="#{footer.food}">User Essen</h3>
+          <a href="/card" th:text="#{footer.food.card}">Speisekarte</a>
+          <a href="/supplier" th:text="#{footer.food.delivery}">Lieferant</a>
+          <a href="/kitchen" th:text="#{footer.food.kitchen}">Küche</a>
+          <a href="/team" th:text="#{footer.food.team}">Team</a>
+        </section>
+        <section>
+          <h3 th:text="#{footer.whine}">Usere Weine</h3>
+          <a href="/origin" th:text="#{footer.food.origin}">Herkunft</a>
+          <a href="/reviews" th:text="#{footer.food.ratings}">Bewertungen</a>
+        </section>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="wrap">
+      <span>&copy; 2022 - MyGourmet</span>
+    </div>
+  </footer>
+</body>
+
+</html>

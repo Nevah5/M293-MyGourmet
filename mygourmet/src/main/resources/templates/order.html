@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/order.style.css}">
+  <title>Order - MyGourmet</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/">
+      <img th:src="@{/images/logo.png}" alt="Logo">
+    </a>
+    <div class="navigation">
+      <a href="/" th:text="'<<< '+#{button.back}"></a>
+    </div>
+  </nav>
+  <main>
+    <form th:object="${form}" th:method="POST">
+      <legend th:text="#{order.title}">Personal Data</legend>
+      <label for="name" th:text="#{order.name}">Name</label>
+      <input type="text" name="name" id="name" th:field="*{name}">
+      <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">%CVVError%</span>
+      <label for="lastname" th:text="#{order.lastname}">Nachname</label>
+      <input type="text" name="lastname" id="lastname" th:field="*{lastName}">
+      <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">%CVVError%</span>
+      <label for="age" th:text="#{order.age}">Alter</label>
+      <input type="number" name="age" id="age" th:field="*{age}">
+      <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">%CVVError%</span>
+
+      <legend th:text="#{order.payment}">Payment</legend>
+      <label for="cardnum" th:text="#{order.number}">Kartennummer</label>
+      <input type="text" name="cardnum" id="cardnum" placeholder="XXXX-XXXX-XXXX-XXXX" th:field="*{cardNumber}">
+      <span th:if="${#fields.hasErrors('cardNumber')}" th:errors="*{cardNumber}">%CardNumberError%</span>
+      <label for="valid" th:text="#{order.valid}">Gültig bis</label>
+      <input type="text" name="valid" id="valid" placeholder="MM-YY" th:field="*{valid}">
+      <span th:if="${#fields.hasErrors('valid')}" th:errors="*{valid}">%ValidError%</span>
+      <label for="cvv">CVV</label>
+      <input type="text" name="cvv" id="cvv" placeholder="XXX" th:field="*{cvv}">
+      <span th:if="${#fields.hasErrors('cvv')}" th:errors="*{cvv}">%CVVError%</span>
+
+      <input type="submit" th:value="#{button.purchase} + ' >'">
+    </form>
+  </main>
+  <footer>
+    <div class="wrapper">
+      <div class="logowrap">
+        <a href="/">
+          <img th:src="@{/images/logo.png}" alt="Logo">
+        </a>
+        <div class="payments">
+          <img th:src="@{/images/paypal.png}" alt="paypal">
+          <img th:src="@{/images/visa.png}" alt="visa">
+          <img th:src="@{/images/mastercard.png}" alt="mastercard">
+        </div>
+      </div>
+      <div>
+        <section>
+          <h3 th:text="#{footer.help}">Hilfe</h3>
+          <a href="/contact" th:text="#{footer.help.contact}">Kontakt</a>
+          <a href="/adress" th:text="#{footer.help.address}">Adresse</a>
+          <a href="/phone" th:text="#{footer.help.phone}">Telefon</a>
+        </section>
+        <section>
+          <h3 th:text="#{footer.food}">User Essen</h3>
+          <a href="/card" th:text="#{footer.food.card}">Speisekarte</a>
+          <a href="/supplier" th:text="#{footer.food.delivery}">Lieferant</a>
+          <a href="/kitchen" th:text="#{footer.food.kitchen}">Küche</a>
+          <a href="/team" th:text="#{footer.food.team}">Team</a>
+        </section>
+        <section>
+          <h3 th:text="#{footer.whine}">Usere Weine</h3>
+          <a href="/origin" th:text="#{footer.food.origin}">Herkunft</a>
+          <a href="/reviews" th:text="#{footer.food.ratings}">Bewertungen</a>
+        </section>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="wrap">
+      <span>&copy; 2022 - MyGourmet</span>
+    </div>
+  </footer>
+</body>
+
+</html>

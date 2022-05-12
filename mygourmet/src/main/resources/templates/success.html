@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/order.style.css}">
+  <title>Order - MyGourmet</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/">
+      <img th:src="@{/images/logo.png}" alt="Logo">
+    </a>
+    <div class="navigation">
+      <a href="/">&lt;&lt;&lt; Back</a>
+    </div>
+  </nav>
+  <main>
+    <form>
+      <h1>Thank you for your purchase!</h1>
+      <a href="/">&lt; Go Back</a>
+    </form>
+  </main>
+  <footer>
+    <div class="wrapper">
+      <div class="logowrap">
+        <a href="/">
+          <img th:src="@{/images/logo.png}" alt="Logo">
+        </a>
+        <div class="payments">
+          <img th:src="@{/images/paypal.png}" alt="paypal">
+          <img th:src="@{/images/visa.png}" alt="visa">
+          <img th:src="@{/images/mastercard.png}" alt="mastercard">
+        </div>
+      </div>
+      <div>
+        <section>
+          <h3>Hilfe</h3>
+          <a href="/contact">Kontakt</a>
+          <a href="/adress">Adresse</a>
+          <a href="/phone">Telefon</a>
+        </section>
+        <section>
+          <h3>User Essen</h3>
+          <a href="/card">Speisekarte</a>
+          <a href="/supplier">Lieferant</a>
+          <a href="/kitchen">Küche</a>
+          <a href="/team">Team</a>
+        </section>
+        <section>
+          <h3>Usere Weine</h3>
+          <a href="/origin">Herkunft</a>
+          <a href="/reviews">Bewertungen</a>
+        </section>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="wrap">
+      <span>&copy; 2022 - MyGourmet</span>
+    </div>
+  </footer>
+</body>
+
+</html>
