@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #272727;
+}
+@mixin goldbg {
+  background: linear-gradient(90deg, rgb(122, 83, 39) 0%, rgba(173,153,94,1) 30%, rgba(109,74,35,1) 69%, rgba(173,153,94,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav{
+  height: 10%;
+  max-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img{
+    height: 100%;
+    max-height: 100px;
+  }
+  .navigation{
+    a{
+      margin: 0 15px;
+      font-size: 1.3rem;
+      font-family: 'Koulen', cursive;
+      @include goldbg();
+    }
+  }
+}
+
+main{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form{
+    position: relative;
+    border: solid 4px rgb(122, 83, 39);
+    padding: 10px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    h1{
+      @include goldbg();
+      font-family: 'Koulen', cursive;
+      letter-spacing: 2px;
+    }
+    h1 ~ a{
+      font-family: 'Koulen', cursive;
+      border: rgba(122, 83, 39, 0.5) solid 2px;
+      background-color: transparent;
+      margin-top: 20px;
+      padding: 8px 13px;
+      border-radius: .5em;
+      @include goldbg();
+      font-weight: 1000;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: border .5s;
+
+      &:hover, &:focus{
+        border: rgb(122, 83, 39) solid 2px;
+      }
+    }
+    span{
+      color: red;
+      font-family: 'Koulen', cursive;
+    }
+    legend{
+      @include goldbg();
+      font-family: 'Koulen', cursive;
+      margin-bottom: 20px;
+
+      &:not(:first-child){
+        margin-top: 30px;
+      }
+    }
+    label{
+      @include goldbg();
+      font-family: 'Koulen', cursive;
+    }
+    input[type="text"], input[type="number"]{
+      width: calc(100% - 20px);
+      font-family: 'Koulen', cursive;
+      border: solid 2px rgba(122, 83, 39, 0.5);
+      background-color: transparent;
+      outline: none;
+      color: rgb(122, 83, 39);
+
+      &::placeholder{
+        color: rgb(122, 83, 39);
+        opacity: 0.7;
+      }
+
+      &:hover, &:focus{
+        border: rgb(122, 83, 39) solid 2px;
+      }
+    }
+  }
+  input[type="submit"]{
+    border: rgba(122, 83, 39, 0.5) solid 2px;
+    background-color: transparent;
+    margin-top: 20px;
+    padding: 8px 13px;
+    border-radius: .5em;
+    @include goldbg();
+    font-weight: 1000;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: border .5s;
+
+    &:hover, &:focus{
+      border: rgb(122, 83, 39) solid 2px;
+    }
+  }
+}
+
+footer{
+  background-color: #272727;
+  padding: 30px;
+
+  div.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logowrap{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+
+      & > a img{
+        width: 300px;
+      }
+      .payments img{
+        aspect-ratio: 1 / 1;
+        width: 80px;
+      }
+    }
+    div{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      section{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0 40px;
+
+        h3{
+          @include goldbg();
+          margin: 0;
+          font-family: 'Koulen', cursive;
+        }
+        a{
+          text-decoration: none;
+          @include goldbg();
+          font-family: 'Koulen', cursive;
+        }
+      }
+    }
+  }
+  .line{
+    background: linear-gradient(90deg, rgb(122, 83, 39) 0%, rgba(173,153,94,1) 30%, rgba(109,74,35,1) 69%, rgba(173,153,94,1) 100%);
+    display: block;
+    height: 4px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span{
+      font-family: 'Koulen', cursive;
+      @include goldbg();
+      margin-top: 10px;
+    }
+  }
+}

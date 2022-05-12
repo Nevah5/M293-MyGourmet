@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+*{
+  scroll-behavior: smooth !important;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+@mixin goldbg {
+  background: linear-gradient(90deg, rgb(122, 83, 39) 0%, rgba(173,153,94,1) 30%, rgba(109,74,35,1) 69%, rgba(173,153,94,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav{
+  height: 10%;
+  max-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272727;
+
+  img{
+    height: 100%;
+    max-height: 100px;
+  }
+  .navigation{
+    a{
+      margin: 0 15px;
+      font-size: 1.3rem;
+      font-family: 'Koulen', cursive;
+      @include goldbg();
+    }
+  }
+}
+.section{
+  position: relative;
+  overflow: hidden;
+
+  h1{
+    margin: 0;
+    color: white;
+    font-family: 'Koulen', cursive;
+    @include goldbg();
+    margin-left: 40px;
+  }
+  p{
+    color: white;
+    font-family: 'Koulen', cursive;
+    width: 40%;
+    @include goldbg();
+    margin-bottom: 200px;
+    margin-left: 40px;
+  }
+  &#about{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    video{
+      filter: brightness(0.3);
+      transform: translateY(-13px);
+      z-index: -1;
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      left: 0;
+      box-sizing: border-box;
+      aspect-ratio: 16 / 9;
+    }
+  }
+  &#order{
+    height: 50vh;
+    background-image: url('../images/whinefood.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    a{
+      background: linear-gradient(90deg, rgb(122, 83, 39) 0%, rgba(173,153,94,1) 30%, rgba(109,74,35,1) 69%, rgba(173,153,94,1) 100%);
+      color: white;
+      font-family: 'Koulen', cursive;
+      padding: 5px 10px;
+      font-size: 1.4rem;
+      border-radius: .4em;
+      text-decoration: none;
+      margin-left: 40px;
+    }
+  }
+  .spacer{
+    height: 40px;
+    background-color: #272727;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+footer{
+  background-color: #272727;
+  padding: 30px;
+
+  div.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logowrap{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+
+      & > a img{
+        width: 300px;
+      }
+      .payments img{
+        aspect-ratio: 1 / 1;
+        width: 80px;
+      }
+    }
+    div{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      section{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0 40px;
+
+        h3{
+          @include goldbg();
+          margin: 0;
+          font-family: 'Koulen', cursive;
+        }
+        a{
+          text-decoration: none;
+          @include goldbg();
+          font-family: 'Koulen', cursive;
+        }
+      }
+    }
+  }
+  .line{
+    background: linear-gradient(90deg, rgb(122, 83, 39) 0%, rgba(173,153,94,1) 30%, rgba(109,74,35,1) 69%, rgba(173,153,94,1) 100%);
+    display: block;
+    height: 4px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span{
+      font-family: 'Koulen', cursive;
+      @include goldbg();
+      margin-top: 10px;
+    }
+  }
+}
