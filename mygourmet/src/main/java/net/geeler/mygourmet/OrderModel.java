@@ -12,7 +12,7 @@ public class OrderModel {
   public String lastName;
 
   @NotNull(message = "Darf nicht leer sein.")
-  @Min(18)
+  @Min(value = 18, message = "You have to be at least 18 years old.")
   private Integer age;
 
   @NotNull(message = "Darf nicht leer sein.")

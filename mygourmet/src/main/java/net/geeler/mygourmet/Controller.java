@@ -16,10 +16,10 @@ public class Controller {
   }
 
   @PostMapping("/order")
-  public String postOrder(Model model, @Valid OrderModel orderModel, BindingResult bindingResult) {
+  public String postOrder(@Valid OrderModel orderModel, BindingResult bindingResult, Model model) {
     model.addAttribute("form", orderModel);
     if (bindingResult.hasErrors())
-        return "order";
+      return "order";
     return "success";
   }
 
